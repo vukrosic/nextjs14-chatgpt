@@ -1,6 +1,14 @@
 import { v } from 'convex/values';
 import { mutation, query } from './_generated/server';
 
+export const get = query({
+    args: { id: v.id("chats") },
+    handler: async (ctx, args) => {
+        return await ctx.db
+            .get(args.id);
+    },
+})
+
 export const create = mutation({
     args: {},
     handler: async (ctx) => {

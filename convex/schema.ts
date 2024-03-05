@@ -15,5 +15,14 @@ export default defineSchema({
         title: v.string(),
     })
         .index("by_userId", ["userId"]),
+    messages: defineTable({
+        role: v.union(
+            v.literal("user"),
+            v.literal("assistant")
+        ),
+        content: v.string(),
+        chatId: v.id("chats"),
+    })
+        .index("by_chatId", ["chatId"])
 
 })
