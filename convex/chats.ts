@@ -1,3 +1,4 @@
+import { v } from 'convex/values';
 import { mutation, query } from './_generated/server';
 
 export const create = mutation({
@@ -49,4 +50,20 @@ export const list = query({
             .withIndex("by_userId", (q) => q.eq("userId", user._id))
             .collect();
     }
+});
+
+export const rename = mutation({
+    args: { id: v.id("chats"), title: v.string() },
+    handler: async (ctx, args) => {
+        await ctx.db.patch(args.id, {
+            title: args.title,
+        });
+    },
+});
+
+export const remove = mutation({
+    args: { id: v.id("chats") },
+    handler: async (ctx, args) => {
+        await ctx.db.delete(args.id);
+    },
 });

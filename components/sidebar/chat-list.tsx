@@ -4,6 +4,7 @@ import { api } from "@/convex/_generated/api"
 import { Id } from "@/convex/_generated/dataModel";
 import { useQuery } from "convex/react"
 import { useParams } from "next/navigation";
+import { ChatBox } from "./chat-box";
 
 export const ChatList = () => {
     const chats = useQuery(api.chats.list);
@@ -14,9 +15,13 @@ export const ChatList = () => {
     }
 
     return (
-        <div>
+        <div className="flex flex-col flex-1 overflow-y-auto">
             {chats.map((chat) => (
-                <div key={chat._id}>{chat.title}</div>
+                <ChatBox
+                    key={chat._id}
+                    chat={chat}
+                    selected={chat._id === chatId}
+                />
             ))}
         </div>
     )
