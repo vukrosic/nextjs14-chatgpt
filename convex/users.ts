@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { mutation, query } from "./_generated/server";
+import { internalMutation, mutation, query } from "./_generated/server";
 
 export const store = mutation({
     args: {},
@@ -17,7 +17,20 @@ export const store = mutation({
             .unique();
 
         if (user !== null) {
-            return user._id;
+            const chat = await ctx.db
+                .query("chats")
+                .withIndex("by_userId", (q) =>
+                    q.eq("userId", user._id))
+                .first();
+
+            if (chat === null) {
+                const chatId = await ctx.db.insert("chats", {
+                    userId: user._id,
+                    title: "New Chat"
+                });
+                return chatId;
+            }
+            return chat._id;
         }
 
         const userId = await ctx.db.insert("users", {
@@ -25,12 +38,12 @@ export const store = mutation({
             model: "gpt-3.5-turbo-1106",
         });
 
-        await ctx.db.insert("chats", {
+        const chatId = await ctx.db.insert("chats", {
             userId,
             title: "New Chat"
         });
 
-        return userId;
+        return chatId;
     }
 });
 
@@ -74,4 +87,33 @@ export const selectGPT = mutation({
 
         return user._id;
     }
-})
+});
+
+//update subscription
+export const updateSubscription = internalMutation({
+    args: { subscriptionId: v.string(), userId: v.id("users"), endsOn: v.number() },
+    handler: async (ctx, { subscriptionId, userId, endsOn }) => {
+        await ctx.db.patch(userId, {
+            subscriptionId: subscriptionId,
+            endsOn: endsOn
+        });
+    },
+});
+
+//update subscription by id
+export const updateSubscriptionById = internalMutation({
+    args: { subscriptionId: v.string(), endsOn: v.number() },
+    handler: async (ctx, { subscriptionId, endsOn }) => {
+        const user = await ctx.db.query("users")
+            .withIndex("by_subscriptionId", (q) => q.eq("subscriptionId", subscriptionId))
+            .unique();
+
+        if (!user) {
+            throw new Error("User not found!");
+        }
+
+        await ctx.db.patch(user._id, {
+            endsOn: endsOn
+        });
+    },
+});

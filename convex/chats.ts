@@ -40,7 +40,7 @@ export const list = query({
     handler: async (ctx) => {
         const identity = await ctx.auth.getUserIdentity();
         if (!identity) {
-            throw new Error("Called list chats without logged in user!");
+            return [];
         }
 
         const user = await ctx.db
@@ -50,7 +50,7 @@ export const list = query({
             .unique();
 
         if (user === null) {
-            throw new Error("User not found");
+            return null;
         }
 
         return ctx.db
