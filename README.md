@@ -1,30 +1,53 @@
 This is code for the following tutorial:
 
-[![ChatGPT Clone](https://youtu.be/_Aeu7BcMoeY?si=f4c4QoosSys86sOV))
+[VIDEO TUTORIAL](https://youtu.be/_Aeu7BcMoeY?si=f4c4QoosSys86sOV)
+
 ![ChatGPT Clone](https://i.ytimg.com/vi/_Aeu7BcMoeY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBENGf8oDCq4nwdPXo0AFVaAy1DMQ)
 
-If you want to run this I recommend following the tutorial. If not, just solve errors one by one. You will need to setup Clerk, Convex and other things. Don't forget to add your variables to convex website as well. Here is example .env.local file:
 
-(FAKE DATA EXAMPLE)
+
+If you want to run this I recommend following the tutorial. If not, you can try the following:
+
+## Required:
+Node version 14.x
+
+## Clone this repo
+```bash
+git clone https://github.com/vukrosic/nextjs14-chatgpt
+```
+
+## Install packages
+```bash
+npm install
+```
+
+## Run Convex
+```bash
+npx convex dev
+```
+
+You will need to setup Clerk, Convex and other things. Don't forget to add your variables to convex website as well. Here is example .env.local file:
 
 ```env
-# Deployment used by `npx convex dev`
-CONVEX_DEPLOYMENT=dev:rapid-oblivion-315 # team: vukrosic, project: nextjs14-chatgpt
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
 
-NEXT_PUBLIC_CONVEX_URL=https://rapid-oblivion-315.convex.cloud
-
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_d2VsbC1nZWxkaW5nLTcsdfsdfFDFLmFjY291bnRzLmRldiQ
-CLERK_SECRET_KEY=sk_test_D5Z9tsdhNyFDSsfuS1MCdNL9Wd4kqsW
-
-OPENAI_API_KEY=sk-sHsrpLrJG5uUVQ1sdfFFfdgfFkFJPIpue2lgn5nFn4IPmJK7
+OPENAI_API_KEY=
 
 NEXT_PUBLIC_HOSTING_URL=http://localhost:3000
 
-STRIPE_SUBSCRIPTION_PRICE_ID=price_1OdfghZnOTK3DdfgGmHsjUI
-NEXT_STRIPE_PUBLISHABLE_KEY=pk_test_51MBmbKKEQZnOTK3DEXb7dfgdfg4kf4dFc5Ck9XL9VlVBXd0p0S6JGRQmnwIb0fG4tOVNuu6D5gZGN67Aqa38Mccv00QeSPG5rN
-NEXT_STRIPE_SECRET_KEY=sk_test_5asdfdfFmbKKEQZnOTK3dfghdfghBldLb2aPXfdgdfgDWCka6JezH1dRHDJS5sOKr0VlsW3pWVo8DX4emhT8002KxkxVKj
-STRIPE_WEBHOOK_SECRET=whsec_7KDSVasdfFFaKRyBJkxUDJFteqqpFpQfK
+STRIPE_SUBSCRIPTION_PRICE_ID=
+NEXT_STRIPE_PUBLISHABLE_KEY=
+NEXT_STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
 ```
+
+## Run the app
+```bash
+npm run dev
+```
+
+At this point, you application should work, but it probably doesn't. You may check timesteps in the video description or try to read and solve errors by yourself. You can also ask in comments.
 
 
 
