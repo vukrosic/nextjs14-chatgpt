@@ -5,7 +5,7 @@ This is code for the following tutorial:
 [VIDEO TUTORIAL](https://youtu.be/_Aeu7BcMoeY?si=f4c4QoosSys86sOV)
 
 
-If you want to run this I recommend following the tutorial. If not, you can try the following:
+If you want to run this I recommend following the tutorial. You can also try the following:
 
 ## Required:
 Node version 14.x
