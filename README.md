@@ -1,7 +1,35 @@
-Follow the tutorial here:
+This is code for the following tutorial:
 
-https://www.youtube.com/watch?v=vFi18Am7ccQ
-[![ChatGPT Clone](https://img.youtube.com/vi/vFi18Am7ccQ/0.jpg)](https://www.youtube.com/watch?v=vFi18Am7ccQ)
+[![ChatGPT Clone](https://youtu.be/_Aeu7BcMoeY?si=f4c4QoosSys86sOV))
+
+If you want to run this I recommend following the tutorial. If not, just solve errors one by one. You will need to setup Clerk, Convex and other things. Here is example .env.local file:
+
+(FAKE DATA EXAMPLE)
+
+```env
+# Deployment used by `npx convex dev`
+CONVEX_DEPLOYMENT=dev:rapid-oblivion-315 # team: vukrosic, project: nextjs14-chatgpt
+
+NEXT_PUBLIC_CONVEX_URL=https://rapid-oblivion-315.convex.cloud
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_d2VsbC1nZWxkaW5nLTcsdfsdfFDFLmFjY291bnRzLmRldiQ
+CLERK_SECRET_KEY=sk_test_D5Z9tsdhNyFDSsfuS1MCdNL9Wd4kqsW
+
+OPENAI_API_KEY=sk-sHsrpLrJG5uUVQ1sdfFFfdgfFkFJPIpue2lgn5nFn4IPmJK7
+
+NEXT_PUBLIC_HOSTING_URL=http://localhost:3000
+
+STRIPE_SUBSCRIPTION_PRICE_ID=price_1OdfghZnOTK3DdfgGmHsjUI
+NEXT_STRIPE_PUBLISHABLE_KEY=pk_test_51MBmbKKEQZnOTK3DEXb7dfgdfg4kf4dFc5Ck9XL9VlVBXd0p0S6JGRQmnwIb0fG4tOVNuu6D5gZGN67Aqa38Mccv00QeSPG5rN
+NEXT_STRIPE_SECRET_KEY=sk_test_5asdfdfFmbKKEQZnOTK3dfghdfghBldLb2aPXfdgdfgDWCka6JezH1dRHDJS5sOKr0VlsW3pWVo8DX4emhT8002KxkxVKj
+STRIPE_WEBHOOK_SECRET=whsec_7KDSVasdfFFaKRyBJkxUDJFteqqpFpQfK
+```
+
+
+
+
+
+# Next JS documentation below
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
