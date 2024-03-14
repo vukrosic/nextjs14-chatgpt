@@ -1,8 +1,9 @@
 This is code for the following tutorial:
 
 [![ChatGPT Clone](https://youtu.be/_Aeu7BcMoeY?si=f4c4QoosSys86sOV))
+![ChatGPT Clone](https://i.ytimg.com/vi/_Aeu7BcMoeY/hqdefault.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLBENGf8oDCq4nwdPXo0AFVaAy1DMQ)
 
-If you want to run this I recommend following the tutorial. If not, just solve errors one by one. You will need to setup Clerk, Convex and other things. Here is example .env.local file:
+If you want to run this I recommend following the tutorial. If not, just solve errors one by one. You will need to setup Clerk, Convex and other things. Don't forget to add your variables to convex website as well. Here is example .env.local file:
 
 (FAKE DATA EXAMPLE)
 
