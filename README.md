@@ -4,6 +4,11 @@ This is code for the following tutorial:
 
 [VIDEO TUTORIAL](https://youtu.be/_Aeu7BcMoeY?si=f4c4QoosSys86sOV)
 
+![Screenshot_21](https://github.com/user-attachments/assets/52d83582-9d18-42fe-a7f7-a8da83a540d0)
+
+![Screenshot_1](https://github.com/user-attachments/assets/892b1b0d-7e51-4a72-bd12-0e442f87af1a)
+
+![Screenshot_3](https://github.com/user-attachments/assets/c28ad8b7-ab45-4f68-8026-6a727eb569f4)
 
 If you want to run this I recommend following the tutorial. You can also try the following:
 
